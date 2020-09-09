@@ -1,0 +1,27 @@
+## Process proposal: ERP documentation for loading suppliers
+
+#Accountable parties and areas responsible
+1. ERP Admin - Bongi and Anele
+3. Tech: Uploading supplier documentation as per Nova standard.
+
+#Goals
+1. Make process easier for uploading documents to ERP
+2. Distinguish accountable parties for each part in process
+3. Have a single area to store all documentation received
+4. Minimise use of email for document storage
+5. Create redundancy for document storage, to cater for failure of each system
+6. Have tech and finance accessing the same area for documentation
+
+# Steps
+1. Tech to request documents from suppliers
+    a. Nova Supplier form
+    b. Company documents (Certificate of registration, Memorandum of incorporation)
+    c. Valid Tax clearance
+    d. BEE certificate
+    e. Bank letter/cancelled cheque
+    f. In the case of an international supplier relevant documentation relating to business process must be provided.
+2. Tech uploads documents to Supplier Documents Shared Drive
+    a. Link: https://drive.google.com/drive/u/1/folders/0AH8mnOPvH4RVUk9PVA
+    b. Access to be given by Tech / Ops to Bongi and Anele for loading documents to ERP
+3. Email sent to Bongi and Anele to load documentation with link and screenshot of breadcrumbs for ease of navigation. Finance to be included in request.
+4. Finance to verify documentation is correct.
