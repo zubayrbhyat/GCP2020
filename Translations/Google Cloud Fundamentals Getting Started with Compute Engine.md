@@ -62,8 +62,8 @@ In this lab, you will learn how to perform the following tasks:
     Apt-get install will search for the package you specify and install it if it finds it.
     *If you have any trouble with this command, remember to check your syntax (order of words used)
 7. Run the following command to open up the home page in the Nano editor:
-    sudo nano /var/www/html/html/index.nginx-debian.html
-    For more information on using **nano** type **man nano**
+    >sudo nano /var/www/html/html/index.nginx-debian.html
+For more information on using **nano** type **man nano** in a virtual machine or linux terminal
 8. Search for the message "Hi from YOUR_NAME" by using the arrow keys on your keyboard. Enter your name:
     Original line:
     >Hi from YOUR_NAME
