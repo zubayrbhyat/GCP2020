@@ -80,7 +80,7 @@ In this lab, you will learn how to perform the following tasks:
 13. Test connectivity from the internet to my-vm-1.:
     >gcloud compute addresses list
 14. Take note of the external address from my-vm-1. Run the following command:
-   >curl http://[my-vm-1-external-ip-address]
+    >curl http://[my-vm-1-external-ip-address]
 
 #Well done!
 You have created VM Instances within GCP purely with command-line tools. Impressive!
