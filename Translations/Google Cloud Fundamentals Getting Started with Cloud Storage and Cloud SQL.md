@@ -117,14 +117,36 @@ In this lab, you will learn how to perform the following tasks:
 15. You will receive a new message stating the database now connects:
     >Database connection succeeded.
 
-    
+## Task 6: Configure an application in a Compute Engine instance to use a Cloud Storage object
+
+1. Go back to your SSH session on your **bloghost** VM.
+2. Generate a public link for your image you uploaded. The format will look like this: https://storage.googleapis.com/PROJECT_ID/my-excellent-blog.png. You allowed public access to your Storage Bucket earlier, so this will automatically be created. Here is an example:
+    >https://storage.googleapis.com/qwiklabs-gcp-0005e186fa559a09/my-excellent-blog.png
+Note that you can find your project ID by typing **echo $DEVSHELL_PROJECT_ID** in Cloud Shell.
+3. Navigate to your document root directly for Apache:
+    >cd /var/www/html
+4. Edit index.php with nano:
+    >sudo nano index.php
+5. Paste this HTML markup code below **<HTML>** and just before **<h1>**:
+    ><img src='
+6. Paste your public URL for the **my-excellent-blog.png** image file after the single quote:
+    ><img src='https://storage.googleapis.com/qwiklabs-gcp-0005e186fa559a09/my-excellent-blog.png
+7. Add a single quote and closed brackets:
+    ><img src='https://storage.googleapis.com/qwiklabs-gcp-0005e186fa559a09/my-excellent-blog.png'>
+8. Press **CTRL+O**, **Enter** and **CTRL+X**.
+9. Restart Apache:
+    >sudo service apache2 restart
+10. Use curl to access your bloghost VM instance's public IP address:
+    >curl 35.192.208.2/index.php
+The site will now display an image, though you wil not see the image in a terminal. Use your web browser to view the image.
+
 
 
 
 
 
 # Well done!
-You have created VM Instances within GCP purely with command-line tools. Impressive!
+In this lab, you configured a Cloud SQL instance and connected an application in a Compute Engine instance to it. You also worked with a Cloud Storage bucket, all done via command-line. Well done!
 
 # End your lab
 You may end your lab once you are done by clicking End Lab. Qwiklabs will remove all resources and clean up the accounts and projects. Please remember to rate your experience in stars, from 1 star to 5, depending on how you felt after completing this lab.
@@ -138,4 +160,4 @@ Click submit when done.
 
 You can close the dialog box if you don't want to provide feedback.
 
-For feedback, suggestions, or corrections, please use the *Support* tab.
+For feedback, suggestions, or corrections, please use the **Support** tab.
