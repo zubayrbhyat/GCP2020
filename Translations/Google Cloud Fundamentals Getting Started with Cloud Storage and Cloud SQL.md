@@ -68,7 +68,57 @@ In this lab, you will learn how to perform the following tasks:
     >gcloud sql instances patch blog-db --authorized-networks=35.192.208.2/32
 
 ## Task 5
-1. 
+1. SSH into your Bloghost VM:
+    >gcloud compute ssh --project DEVSHELL_PROJECT_ID bloghost
+2. Navigate into the document root of the web server
+    >cd /var/www/html
+3. Open the root index.php file with nano using Sudo. Sudo uses elevated permissions to edit selected important files:
+    >sudo nano index.php
+4. Paste the following into the file:
+    ><html>
+    ><head><title>Welcome to my excellent blog</title></head>
+    ><body>
+    ><h1>Welcome to my excellent blog</h1>
+    ><?php
+    > $dbserver = "CLOUDSQLIP";
+    >$dbuser = "blogdbuser";
+    >$dbpassword = "DBPASSWORD";
+    >// In a production blog, we would not store the MySQL
+    >// password in the document root. Instead, we would store it in a
+    >// configuration file elsewhere on the web server VM instance.
+    >
+    >$conn = new mysqli($dbserver, $dbuser, $dbpassword);
+    >
+    >if (mysqli_connect_error()) {
+    >    echo ("Database connection failed: " . mysqli_connect_error());
+    >} else {
+    >    echo ("Database connection succeeded.");
+    >}
+    >?>
+    ></body></html>
+5. Edit the **$dbpassword** field with your password you specified earlier. Edit the password in quotes. Do not remove the quotation marks.
+6. Press **CTRL+O** and then **Enter**. Press **CTRL+X** to exit nano.
+7. Restart Apache:
+    >sudo service apache2 restart
+8. Use the curl command to test the external web server IP address. Replace the IP address below with yours:
+    >curl 35.192.208.2/index.php
+    You will receive the following error:
+    >Database connection failed: ...
+    This message occurs because you have not yet configured the PHP connection to your Cloud SQL instance.
+9. Edit the index.php file with **nano**:
+    >sudo nano index.php
+10. Replace **CLOUDSQLIP** with the Cloud SQL Public IP address you noted above. Do not remove the quotation marks.
+11. Press **CTRL+O** and then **Enter**
+12. Press **CTRL+X** to edit nano
+13. Restart Apache again:
+    >sudo service apache2 restart
+14. Use curl to access your web server again:
+    >curl 35.192.208.2/index.php
+15. You will receive a new message stating the database now connects:
+    >Database connection succeeded.
+
+    
+
 
 
 
