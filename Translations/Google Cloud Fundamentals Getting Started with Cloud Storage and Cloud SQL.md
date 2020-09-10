@@ -140,11 +140,6 @@ Note that you can find your project ID by typing **echo $DEVSHELL_PROJECT_ID** i
     >curl 35.192.208.2/index.php
 The site will now display an image, though you wil not see the image in a terminal. Use your web browser to view the image.
 
-
-
-
-
-
 # Well done!
 In this lab, you configured a Cloud SQL instance and connected an application in a Compute Engine instance to it. You also worked with a Cloud Storage bucket, all done via command-line. Well done!
 
