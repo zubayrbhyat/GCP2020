@@ -1,15 +1,15 @@
-#Google Cloud Fundamentals: Getting Started with Compute Engine
+# Google Cloud Fundamentals: Getting Started with Compute Engine
 
-##Overview
+## Overview
 In this lab, you will create virtual machines (VMs) and connect to them. You will also create connections between the instances.
 
-##Objectives
+## Objectives
 In this lab, you will learn how to perform the following tasks:
     * Create a Compute Engine virtual machine using the Google Cloud Platform (GCP) Console.
     * Create a Compute Engine virtual machine using the gcloud command-line interface.
     * Connect between the two instances.
 
-##Task 1: Sign in to the Google Cloud Platform (GCP) Console
+## Task 1: Sign in to the Google Cloud Platform (GCP) Console
 
 1. Make sure you are signed into Quiklabs using an incognito window
 2. Not the lab's access time (for example 2:00:00 [2 hours]) and make sure you can finish in that time block. 
@@ -22,7 +22,7 @@ In this lab, you will learn how to perform the following tasks:
 7. Accept the terms and skip the recovery resource page.
     >Do not click **End Lab** unless you are finished with the lab or want to restart it. This clears your work and removes the project
 
-##Task 2: Create a virtual machine using the Cloud Shell.
+## Task 2: Create a virtual machine using the Cloud Shell.
 
 1. List the zones in the region you provided. Change the zone after **grep** as it applies to you:
     >gcloud compute zones list | grep us-central1
@@ -36,7 +36,7 @@ In this lab, you will learn how to perform the following tasks:
     >--subnet "default"
     >--tags http-server
 
-##Task 3: Create a virtual machine using the gcloud command line
+## Task 3: Create a virtual machine using the gcloud command line
 1. Create the second VM in Cloud Shell. You should still have it open after the last set of commands:
     >gcloud compute instances create "my-vm-2" \
     >--machine-type "n1-standard-1" \
@@ -44,7 +44,7 @@ In this lab, you will learn how to perform the following tasks:
     >--image "debian-9-stretch-v20190213" \
     >--subnet "default"
 
-##Task 4: Connect between VM instances
+## Task 4: Connect between VM instances
 1. Run the following command to connect my-vm-2. You can find your project name in the lab information box. Specify the zone you used earlier.
     >gcloud compute ssh --project PROJECT_ID --zone ZONE my-vm-2
 2. Confirm the SSH key used and proceed with the connection to the VM. Type **yes** if prompted.
@@ -82,10 +82,10 @@ For more information on using **nano** type **man nano** in a virtual machine or
 14. Take note of the external address from my-vm-1. Run the following command:
     >curl http://[my-vm-1-external-ip-address]
 
-#Well done!
+# Well done!
 You have created VM Instances within GCP purely with command-line tools. Impressive!
 
-#End your lab
+# End your lab
 You may end your lab once you are done by clicking End Lab. Qwiklabs will remove all resources and clean up the accounts and projects. Please remember to rate your experience in stars, from 1 star to 5, depending on how you felt after completing this lab.
 Click submit when done.
 
@@ -97,4 +97,4 @@ Click submit when done.
 
 You can close the dialog box if you don't want to provide feedback.
 
-For feedback, suggestions, or corrections, please use the *Support* tab.
+For feedback, suggestions, or corrections, please use the **Support** tab.
