@@ -36,7 +36,7 @@ In this lab, you will learn how to perform the following tasks:
     >--image "debian-9-stretch-v20190213" \
     >--subnet "default"
     >--tags http-server
-    >--metadata=startup-script="apt-get update","apt-get install apache2 php php-mysql -y","service apache2 restart"
+    >--metadata=startup-script=apt-get\ update$'\n'apt-get\ install\ apache2\ php\ php-mysql\ -y$'\n'service\ apache2\ restart
 4. Run **gcloud compute addresses list** and copy the bloghost VM instance's internal and external IP addresses to a text editor for use later in this lab.
 
 ## Task 3: Create a Cloud Storage bucket using the gsutil command line
